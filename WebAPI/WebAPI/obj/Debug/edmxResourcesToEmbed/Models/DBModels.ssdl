@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuizAngularDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tb_M_Participant">
+    <Key>
+      <PropertyRef Name="ParticipantID" />
+    </Key>
+    <Property Name="ParticipantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Score" Type="int" />
+    <Property Name="TimeSpent" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_M_Question">
+    <Key>
+      <PropertyRef Name="QnID" />
+    </Key>
+    <Property Name="QnID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qn" Type="nvarchar(max)" />
+    <Property Name="ImageName" Type="nvarchar(max)" />
+    <Property Name="Option1" Type="nvarchar(max)" />
+    <Property Name="Option2" Type="nvarchar(max)" />
+    <Property Name="Option3" Type="nvarchar(max)" />
+    <Property Name="Option4" Type="nvarchar(max)" />
+    <Property Name="Answer" Type="int" />
+  </EntityType>
+  <EntityContainer Name="QuizAngularDBModelStoreContainer">
+    <EntitySet Name="Tb_M_Participant" EntityType="Self.Tb_M_Participant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tb_M_Question" EntityType="Self.Tb_M_Question" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
